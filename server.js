@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000', // Update this if deploying to a different domain
+    origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000', // Use Railway domain in production
     methods: ['GET', 'POST'],
   },
 });
@@ -29,7 +29,7 @@ nextApp.prepare().then(() => {
       if (!rooms.has(roomId)) {
         rooms.set(roomId, { users: new Set(), code: '', messages: [] });
       }
-      rooms.get(roomId).users.add(username);
+      rooms.get(roomId).users.add(socket.id);  // Store socket ID to uniquely identify the user
       console.log(`${username} joined room ${roomId}`);
 
       // Send current code and chat history to the new user
@@ -57,14 +57,11 @@ nextApp.prepare().then(() => {
 
     socket.on('disconnect', () => {
       console.log('A user disconnected');
-      // Implement logic to remove user from room
       rooms.forEach((room, roomId) => {
-        room.users.forEach((user) => {
-          if (user === socket.id) {
-            room.users.delete(user);
-            socket.to(roomId).emit('user-left', user);
-          }
-        });
+        if (room.users.has(socket.id)) {
+          room.users.delete(socket.id);
+          socket.to(roomId).emit('user-left', socket.id); // Notify users in the room
+        }
       });
     });
   });
@@ -74,6 +71,7 @@ nextApp.prepare().then(() => {
     return handle(req, res);
   });
 
+  // Listen on PORT for production or 3001 for development
   const PORT = process.env.PORT || 3001;
   server.listen(PORT, (err) => {
     if (err) throw err;
