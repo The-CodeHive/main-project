@@ -2,13 +2,13 @@
   "name": "nextjs-collab-app",
   "version": "0.1.0",
   "private": true,
-  "dev": "concurrently \"next dev\" \"node server.js\"",
   "scripts": {
     "server": "node server.js",
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js",
-    "lint": "next lint"
+    "start": "next start",
+    "lint": "next lint",
+    "render-start": "node server.js"  // Add a specific start command for Render
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
