@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #282c34;
+  color: white;
+}
+
+.roomTitle {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.userInfo {
+  margin: 0;
+}
+
+.button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  border: 2px solid transparent; /* Adding border */
+  border-radius: 8px; /* More rounded corners */
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-size: 16px; /* Slightly larger font */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
+}
+
+.button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+}
+
+.button:focus {
+  outline: none; /* Remove default outline */
+  border-color: #21a1f1; /* Highlight border on focus */
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.tabs {
+  display: flex;
+  background-color: #444;
+  padding: 8px;
+}
+
+.tabs button {
+  margin-right: 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #777;
+}
+
+.activeTab {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.chatContainer {
+  height: 300px; /* Set a fixed height for chat */
+  overflow-y: auto;
+  padding: 8px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chatMessage {
+  margin-bottom: 4px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.sendButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sendButton:hover {
+  background-color: #21a1f1;
+}

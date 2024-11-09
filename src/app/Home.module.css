@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=VT323&display=swap');
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(270deg, #32085f, #0e2d62, #32085f); /* Blue-purple gradient */
+  background-size: 400% 400%; /* Large size for smooth transition */
+  animation: gradientAnimation 15s ease-in-out infinite; /* Adjusted animation speed */
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%; /* Move across */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
+}
+
+.formWrapper {
+  background-color: rgba(0, 0, 0, 0.3); /* Dark background with slight transparency */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 40px; /* More padding for spacious feel */
+  border-radius: 20px; /* Rounder corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Softer shadow */
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  font-family: "Jacquarda Bastarda 9", serif;
+  text-align: center;
+  font-size: 2rem; /* Larger title */
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Light gray for contrast */
+  font-weight: bold; /* Bold for impact */
+}
+
+.formGroup {
+  margin-bottom: 20px; /* Increased space */
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.5rem;
+  color: #e0e0e0; /* Light gray for contrast */
+  margin-bottom: 5px;
+  font-weight: 500; /* Medium weight */
+}
+
+.input {
+  width: 100%;
+  padding: 5px; /* More padding */
+  border: 1px solid #3a3a3a; /* Darker border */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 1.5rem;
+  background-color: #00000054; /* Dark background */
+  color: #ffffff; /* White text */
+  transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.input:focus {
+  border-color: #6a11cb; /* Purple border on focus */
+  outline: none;
+  background-color: #06006094; /* Slightly lighter dark background on focus */
+}
+
+.button {
+  width: 100%;
+  padding: 5px;
+  background-color: #6b11cb00; /* Purple */
+  color: white;
+  border: 1px solid #ffffffcb; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 1.5rem;
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button:hover {
+  border:1px solid #2575fc ;
+  background-color: #2575fc; /* Lighter blue on hover */
+}
+
+.button:active {
+  transform: scale(0.98); /* Button press effect */
+}
+
+.generateText {
+  font-size: 0.8rem; /* Make the text smaller */
+  color: #fcfcfc; /* Initial color */
+  cursor: pointer; /* Change cursor to pointer */
+  margin-top: 5px; /* Add some space above the text */
+}
+
+.generateText:hover {
+  color: #00b59d; /* Change color on hover */
+}
+
+.jacquardaBastarda {
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+}
+.vt323regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+.selectionWraper ::selection {
+  background: rgb(255, 0, 111);
+  color: #000000; 
+}
