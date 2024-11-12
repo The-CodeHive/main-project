@@ -3,12 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "server": "node server.js",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "render-start": "node server.js"  // Add a specific start command for Render
+    "start" : "node server.js",
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
