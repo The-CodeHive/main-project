@@ -69,7 +69,8 @@ export default function RoomPage() {
 
   // Initialize socket connection
   useEffect(() => {
-    const newSocket: typeof Socket = io('http://localhost:3001');
+    const newSocket: typeof Socket = io(typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3001')
+    ;
     setSocket(newSocket);
 
     newSocket.emit('join-room', { roomId, username });
